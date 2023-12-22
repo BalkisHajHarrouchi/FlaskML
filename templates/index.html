@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Close Price Prediction</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div class="login">
+        <h1>Close Price Prediction</h1>
+
+        <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('predict')}}" method="post">
+            <input type="text" name="High" placeholder="High" required="required" />
+            <input type="text" name="Low" placeholder="Low" required="required" />
+            <input type="text" name="Open_Price" placeholder="Open_Price" required="required" />
+            <input type="text" name="Adj_Close" placeholder="Adj_Close" required="required" />
+            <input type="text" name="Volume" placeholder="Volume" required="required" />
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+
+        <br>
+        <br>
+        <!-- Add this line to display the prediction -->
+<p id="prediction_result">Prediction: {{ prediction }}</p>
+
+    </div>
+</body>
+
+</html>
